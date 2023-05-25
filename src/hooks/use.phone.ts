@@ -1,12 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { Phone } from "../models/phone";
+import { useState } from "react";
 
 export function usePhone() {
   const [isCalling, setIsCalling] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState<Phone>();
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   function handleCall() {
-    setIsCalling(true);
+    setIsCalling(false);
   }
 
   function handleHang() {
@@ -14,5 +13,18 @@ export function usePhone() {
     setPhoneNumber;
   }
 
-  return { isCalling, phoneNumber, handleCall, handleHang };
+  function handleAddNumber(value: string) {
+    setPhoneNumber(value);
+  }
+
+  const keyValue = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "delete"];
+
+  return {
+    isCalling,
+    phoneNumber,
+    handleCall,
+    handleHang,
+    handleAddNumber,
+    keyValue,
+  };
 }

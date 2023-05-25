@@ -1,8 +1,12 @@
 export function Action() {
   return (
     <>
-      <a href="#" className="call"></a>
-      <a href="#" className="hang active"></a>
+      <a href="#" className="call">
+        Call
+      </a>
+      <a href="#" className="hang active">
+        Hang Up
+      </a>
     </>
   );
 }

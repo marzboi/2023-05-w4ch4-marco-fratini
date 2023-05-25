@@ -1,4 +1,4 @@
 export type Phone = {
-  key: number;
-  display: "string";
+  phoneNumber: string;
+  isCalling: boolean;
 };
