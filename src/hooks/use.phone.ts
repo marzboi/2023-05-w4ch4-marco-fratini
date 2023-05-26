@@ -17,6 +17,10 @@ export function usePhone() {
     setPhoneNumber(value);
   }
 
+  function handleDelete() {
+    setPhoneNumber(phoneNumber.slice(phoneNumber.length, 1));
+  }
+
   const keyValue = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "delete"];
 
   return {
@@ -25,6 +29,7 @@ export function usePhone() {
     handleCall,
     handleHang,
     handleAddNumber,
+    handleDelete,
     keyValue,
   };
 }
