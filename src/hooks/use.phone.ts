@@ -14,7 +14,9 @@ export function usePhone() {
   }
 
   function handleAddNumber(value: string) {
-    setPhoneNumber(value);
+    if (phoneNumber.length <= 9) {
+      setPhoneNumber(value);
+    }
   }
 
   function handleDelete() {
