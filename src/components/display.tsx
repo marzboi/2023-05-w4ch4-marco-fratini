@@ -1,3 +1,10 @@
+import { useContext } from "react";
+import { PhoneContext } from "../context/phone.context";
+
 export function Display() {
-  return <span className="number"></span>;
+  const {
+    phoneContext: { phoneNumber },
+  } = useContext(PhoneContext);
+
+  return <span className="number">{phoneNumber}</span>;
 }
